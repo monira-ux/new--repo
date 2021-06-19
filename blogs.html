@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Adding object in array</title>
+	<style>
+		body {
+			text-align: center;
+		}
+		.login{
+				width: 500px;
+				margin: 0px auto;
+			}
+			thead tr{
+				background-color: #32CD32;
+				color: #fff;
+			}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+	<h1 style="color: green">Add new Blog</h1>
+	<p>Click the button to add new elements to the array.</p>
+
+	<p id="geeks"></p>
+
+	<script>
+		var itemArray = [];
+		var descriptionArray = [];
+		$(document).ready(function(){
+	        $("#btnAdd").click(function(){
+	        	var title = document.getElementById("title").value;
+	        	var description = document.getElementById("description").value;
+
+	        	itemArray.push(title);
+	        	descriptionArray.push(description);
+
+	        	$("#added").text("Blog Added!");
+	        });
+	         $("#btnE").click(function(){
+
+	         	for (i=0;i<itemArray.length;i++)
+				{
+				//document.write(itemArray[i] + "<br >");
+				$('#myTable').append('<tr><td>' + itemArray[i] + '</td><td>' +  descriptionArray[i] + '</td></tr>');
+				}
+	         });
+	        
+    	});
+	</script>
+	<div class="login">
+            <input type="text" name="title" id="title" class="form-control" placeholder="title"><br>
+            <input type="text" name="description" id="description" class="form-control" placeholder="description"><br>
+            <p id="added"></p>
+            <button class="btn btn-success" type="button" id="btnAdd">Add to Blog</button>
+            <button onclick="pushFunction1()" id="btnE" class="btn btn-danger">Show All Blogs</button><br>
+     </div>
+	
+	<br>
+	<h1 style="color: blue">All Blogs</h1>
+	<table id="myTable" border="1" width="500px" align="center">
+	  <thead>
+	    <tr> 
+	    	<td>Title</td>
+	    	<td>Description</td>
+	    </tr>
+	 </thead>
+	</table>
+
+</body>
+

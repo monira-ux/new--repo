@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <meta http-equiv="refresh" content="3"> -->
+    <title>Adding object in array</title>
+    <style>
+        body {
+				text-align: center;
+			}
+			.login{
+				width: 500px;
+				margin: 0px auto;
+			}
+		</style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1 style="color: green">Admin Login</h1>
+    <script>
+        $(document).ready(function(){
+				$("button").click(function(){
+					var user = document.getElementById("username").value;
+					var pass = document.getElementById("password").value;
+
+					if ( user == "Admin" && pass == "123") {
+						alert('Welcome ' + user);
+						window.open("blogs.html");
+					}else{
+						alert('invalid username or password');
+					}
+					
+				});
+			});
+		</script>
+    <form>
+        <div class="login">
+            <input type="text" name="username" id="username" class="form-control" placeholder="username"><br>
+            <input type="text" name="password" id="password" class="form-control" placeholder="password"><br>
+            <button class="btn btn-success" type="button">Login</button>
+        </div>
+    </form>
+</body>
